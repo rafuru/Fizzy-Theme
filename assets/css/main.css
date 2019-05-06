@@ -337,7 +337,7 @@ h3{ margin-bottom: 20px; }
     font-size: 1rem;
 }
 .about-author .bio {
-	height:3em;
+	min-height:3em;
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 8px;
@@ -523,6 +523,9 @@ h3{ margin-bottom: 20px; }
 }
 .tag-card .tag-info .post-count {
 	color: #222;
+}
+.tag-list-header .title span{
+	padding:0.5rem 1.5rem;
 }
 
 /* ====================== footer ====================== 2019.04.12 */
