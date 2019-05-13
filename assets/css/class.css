@@ -44,6 +44,9 @@
         padding-bottom:0px !important;
     }
 }
+.is-padding-05-15{
+    padding:.5rem 1.5rem;
+}
 
 
 /* margin */
@@ -52,6 +55,9 @@
 }
 .is-vmargin-1 {
     margin-top:1rem !important; margin-bottom:1rem !important;
+}
+.is-vmargin-2 {
+    margin-top:2rem !important; margin-bottom:2rem !important;
 }
 .only-margin-top-1{
     margin: 1rem 0 0 0 !important;
@@ -64,7 +70,7 @@
   }
 @media screen and (max-width: 768px){
     .is-margin-bottom-1{
-        margin-bottom:0.5rem !important;
+        margin-bottom:1rem !important;
     }
 }
 @media screen and (min-width: 769px){
@@ -87,9 +93,19 @@
     box-shadow: 0 20px 40px rgba(12,12,94,.1) !important;
 }
 
+.has-shadow-lift {
+    box-shadow: 0 3px 6px rgba(12,12,94,.1) !important;
+}
+.has-shadow-lift:hover {
+    box-shadow: 0 20px 40px rgba(12,12,94,.1) !important;
+}
+
 /* border */
 .round-border-6 {
     border-radius: 6px;
+}
+.round-border-2rem {
+    border-radius: 2rem;
 }
 
 /* layout */

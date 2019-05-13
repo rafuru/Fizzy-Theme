@@ -1,13 +1,28 @@
 # CHANGELOG
 
-## [v0.2.0](#) (TBA)
+## [v0.2.1](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v0.2.1) (2019.05.12)
+This release fixed some minor bugs caused from v0.2.0
+- **listing**: [card] styling for posts without a featured image
+- **post**: [code block]fixed the conflict caused by bulma and Prismjs
+- **post**: [previous & next post card] styling for posts without a featured image
+
+## [v0.2.0](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v0.2.0) (2019.05.11)
 ### NEW
-- **template**: template for featured-post
+- **post**: featured label for featured-post (close: [#4](../../issues/4))
 - **template**: template for single tag (close: [#5](../../issues/5))
 - **template**: template for single author page (close: [#6](../../issues/6))
+- **custom template**: full-width (close: [#15](../../issues/15))
+- **error pages**: 404 and others (close: [#12](../../issues/12), [demo](https://fizzy.cc/404/))
+- **css**: smooth scrolling for id anchors
+- **font**: support Chinese (need Windows test)
+- **component**: badge support (HTML block only).([demo](https://fizzy.cc/fizzy-theme/#badge))
 
 ### MOD
 - **tag list**: smaller featured image size (close: [#11](../../issues/11))
+- **post typography**: inline code style, code block font-size
+- **code highlight**: changed to Prism.js highlighter.
+- **responsive**: fix wide table responsvie display in mobile devices (temorary fix: [#16](../../issues/16))
+- **default**: default.hbs simplified, loading speed increased.
 
 ## [v0.1.2](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v0.1.2) (2019.05.05)
 ### NEW

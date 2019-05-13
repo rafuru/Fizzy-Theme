@@ -10,8 +10,28 @@
     }
 }
 
+/* listing padding on mobile*/
+@media screen and (max-width: 768px){
+    main.section {
+        padding: 1.5rem !important;
+    }
+}
+
+/* inline code */
+p code, blockquote code, li > code, table code{
+	color:inherit!important;
+	margin: 0 1px!important;
+    padding: .1em .4em!important;
+    font-size: .85em!important;
+    background: #f6f6f6!important;
+    border: 1px solid #ddd!important;
+	border-radius: 3px!important;
+	font-style:normal;
+	white-space: nowrap;
+}
+
 /* for code block background */
-pre{background-color:#282a36!important;}
+pre{border-radius:6px;}
 
 /* navbar */
 .navbar-item {
@@ -20,19 +40,103 @@ pre{background-color:#282a36!important;}
 .nav-current {
 	background-color: #eee;
 }
+/* button */
+.button{
+	transition: all .3s ease;
+}
 
+/* ====================== bulma & Prismjs conflict 2019.05.12 ====================== */
+.content .tag, .content .number {
+	display: inline;
+	padding: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	text-align: inherit;
+	vertical-align: inherit;
+	border-radius: inherit;
+	font-weight: inherit;
+	white-space: inherit;
+	background: inherit;
+	margin: inherit;
+  }
+/* ====================== components ====================== */
+.featured-label {
+    position: absolute;
+    background-color: #f7b413;
+    color: #000;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding: 0 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.featured-label.large{
+	font-size: 1.2rem;
+}
+.badge {
+	display: inline-block;
+    padding: 2px 3px 3px;
+	border: 1px solid;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px !important;
+    line-height: 1em !important;
+    font-weight: 600 !important;
+	text-align: center;
+	vertical-align: middle;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+    white-space: nowrap;
+    user-select: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.badge.green {
+    border-color: #84a731;
+    color: #fff;
+    background: linear-gradient(#a4d037,#84a731);
+}
+.badge.blue {
+    border-color: #3777bc;
+    color: #fff;
+    background: linear-gradient(#37a2d0,#3773bc);
+}
+.badge.red {
+    border-color: #ab2929;
+    color: #fff;
+    background: linear-gradient(#e34242,#ab2929);
+}
+.badge.purple {
+    border-color: #721fae;
+    color: #fff;
+    background: linear-gradient(#c042e3,#721fae);
+}
+.can-scale{
+	transition: all .3s;
+}
+.can-scale:hover{
+	transform: scale(1.02);
+	transition: all .5s ease;
+}
 /* ====================== fonts ====================== */
 h1,h2,h3,h4,h5,h6{
-	font-family:'Montserrat', sans-serif !important;
+	font-family:
+	'Montserrat',
+	-apple-system,
+	BlinkMacSystemFont,
+	"Microsoft YaHei",
+	sans-serif;
 }
 .is-montserrat {
-	font-family:'Montserrat', sans-serif !important;
+	font-family:'Montserrat', sans-serif;
 }
 .is-georgia {
-	font-family:Georgia, serif !important;
+	font-family: Georgia, sans-serif !important;
 }
 
 /* ====================== body ====================== 2019.04.11 */
+html {
+	scroll-behavior: smooth;
+}
 html,body{
 	overflow-x: hidden;
 }
@@ -128,7 +232,7 @@ h3{ margin-bottom: 20px; }
 }
 @media screen and (max-width: 768px){
 	.featured-image {
-	min-height:180px;
+	min-height:140px;
 	/* border-radius: 6px 6px 0 0; */
 	}
 }
@@ -139,7 +243,11 @@ h3{ margin-bottom: 20px; }
 }
 @media screen and (max-width: 768px){
 	.post-info {
-		padding:18px;
+		padding: .9rem 1.8rem;
+	}
+	.post-card.columns{margin-top:0;}
+	.post-card .column{
+		padding: 0;
 	}
 }
 @media screen and (min-width: 769px) and (max-width: 1215px){
@@ -153,29 +261,26 @@ h3{ margin-bottom: 20px; }
 	}
 }
 
-/* index: featured-label 2019.04.10 */
+/* index: featured-label - Updated:2019.05.10 */
 .post-info .featured-label {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f7b413;
-    color: #000;
-    font-size: .875rem;
-    height: 28px;
+	top: 10px;
+	right: 10px;
+	height: 28px;
     line-height: 28px;
-    font-weight: 600;
-    letter-spacing: .5px;
-    padding: 0 10px;
-    border-radius: 4px;
-    text-transform: uppercase;
 }
 @media screen and (max-width: 768px){
-	.post-info .featured-label {
-		top: -53px;
-		right: 5px;
+	.post-info .featured-label.has-img {
+		top: -31px;
+		right: 20px;
 		height: 24px;
     	line-height: 24px;
 	}
+	.post-info .featured-label.no-img {
+		top: 10px;
+    	right: 20px;
+		height: 24px;
+    	line-height: 24px;
+	}	
 }
 
 /* ====================== post ====================== 2019.04.13 */
@@ -196,6 +301,13 @@ h3{ margin-bottom: 20px; }
 		border-radius:0;
 	}
 }
+/* for featured-label 2019.05.10 */
+.featured-image{position:relative;}
+.featured-image .featured-label{
+	bottom:10px;
+	right:10px;
+} 
+
 .single-article .post-wrap {
     max-width: 760px;
     padding: 48px 15px;
@@ -222,16 +334,19 @@ h3{ margin-bottom: 20px; }
 .post-wrap .post-content a {
 	color:#000;
 	word-break: break-word;
-	box-shadow: #fb3c3b 0 -1px 0 inset;
+	border-bottom:1px dashed;
 	transition: all .25s;
 }
 .post-wrap .post-content a:hover {
-	color:#fb3c3b;
+	color:#ff7a7a;
+	border-bottom:1px solid;
 }
 /* paragraph */
 .post-wrap .post-content p {
 	line-height: 1.5em;
 }
+/* hr */
+.post-wrap .post-content hr{background: linear-gradient(90deg, #a256e8 0%, #e85668 100%)}
 /* list */
 .post-wrap .post-content ul,.post-content ol{
 	margin-left: 1.5em;
@@ -253,9 +368,9 @@ h3{ margin-bottom: 20px; }
 .post-wrap .post-content pre code {
 	display: block;
 	line-height: 1.5em;
-    font-size: calc(0.5vw + 0.5rem);
+	font-size: calc(0.4vw + 0.5rem);
 	font-weight: 400;
-	padding-bottom: 1.2em;
+	/* padding-bottom: 1.2em; */
 }
 
 /* image layout (temporary solution, may have some bugs 2019.04.14) */
@@ -294,9 +409,11 @@ h3{ margin-bottom: 20px; }
 	width:100%;
 }
 /* gallery */
-.kg-gallery-card{width:53rem;margin:1.5rem -4.5rem!important;}
+.kg-gallery-card{
+	margin: 1rem auto !important;
+}
 @media screen and (max-width:768px){
-	.kg-gallery-card{width:100%;margin:0!important;}
+	.kg-gallery-card{width:100%;margin:1rem auto !important;}
 }
 .single-article .post-content .kg-gallery-container {
 	max-width:100%;
@@ -324,7 +441,7 @@ h3{ margin-bottom: 20px; }
 .single-article .post-content .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 .25em;
 }
-
+.about-author{max-width: 760px; margin: 0 auto;}
 .about-author .meta-info {
     padding: 0;
     margin: 0 0 8px 0;
@@ -352,7 +469,7 @@ h3{ margin-bottom: 20px; }
 	border-left: 5px solid;
 	border-color:#fb3b3b;
 	margin-left: -1.5em;
-	padding: .5em 0 .5em calc(1.5em - 5px);
+	padding: .5em .5em .5em calc(1.5em - 5px);
 }
 .single-article .post-wrap .post-content blockquote:hover {
 	background-image: linear-gradient(to bottom right, #fef8f8, #e4f4fe);
@@ -363,6 +480,84 @@ h3{ margin-bottom: 20px; }
 		padding: .5em .75em;
 	}
 }
+/* table responsive 2019.05.11 */
+/* https://codepen.io/brunodplima/pen/rzpaLO */
+@media screen and (max-width: 768px) {
+	table {
+	  width: 100%;
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	  display: block;
+	  position: relative;
+	}
+	table td:empty:before {
+	  content: " ";
+	}
+	table th,
+	table td {
+	  margin: 0;
+	  vertical-align: top;
+	}
+	table th {
+	  text-align: left;
+	}
+	table thead {
+	  border-right: solid 2px #dbdbdb;
+	  display: block;
+	  float: left;
+	}
+	table thead tr {
+	  display: block;
+	  padding: 0 10px 0 0;
+	}
+	table thead tr th::before {
+	  content: " ";
+	}
+	table thead td,
+	table thead th {
+	  border-width: 0 0 1px;
+	}
+	table tbody {
+	  display: block;
+	  width: auto;
+	  position: relative;
+	  overflow-x: auto;
+	  white-space: nowrap;
+	}
+	table tbody tr {
+	  display: inline-block;
+	  vertical-align: top;
+	}
+	table th {
+	  display: block;
+	  text-align: right;
+	}
+	table td {
+	  display: block;
+	  min-height: 1.25em;
+	  text-align: left;
+	}
+	table th:last-child,
+	table td:last-child {
+	  border-bottom-width: 0;
+	}
+	table tr:last-child td:not(:last-child) {
+	  border: 1px solid #dbdbdb;
+	  border-width: 0 0 1px;
+	}
+	table.is-bordered td,
+	table.is-bordered th {
+	  border-width: 1px;
+	}
+	table.is-bordered tr td:last-child,
+	table.is-bordered tr th:last-child {
+	  border-bottom-width: 1px;
+	}
+	table.is-bordered tr:last-child td,
+	table.is-bordered tr:last-child th {
+	  border-width: 1px;
+	}
+  }
 
 /* ====================== post: aside ====================== 2019.04.11 */
 @media screen and (min-width: 769px){
@@ -406,6 +601,20 @@ h3{ margin-bottom: 20px; }
 }
 .aside .featured-label {
     top: -38px;
+}
+@media screen and (max-width: 768px){
+	.aside .post-info .featured-label.has-img {
+		top: -34px;
+		right: 10px;
+		height: 24px;
+    	line-height: 24px;
+	}
+	.aside .post-info .featured-label.no-img {
+		top: 10px;
+    	right: 10px;
+		height: 24px;
+    	line-height: 24px;
+	}	
 }
 /* aside: tag list card */
 .aside .tag-list {
@@ -479,7 +688,7 @@ h3{ margin-bottom: 20px; }
 	height:100%;
 }
 
-/* ====================== Tag Archive ====================== 2019.04.14 */
+/* ====================== template: Tag Archive ====================== 2019.04.14 */
 .card-wrap {
     margin-bottom: 30px;
 }
@@ -528,6 +737,16 @@ h3{ margin-bottom: 20px; }
 	padding:0.5rem 1.5rem;
 }
 
+/* ====================== template: Full Width ====================== 2019.05.10 */
+.single-article .post-wrap.full-width {
+    max-width: 960px;
+    padding: 48px 15px;
+    font-size: 1.25rem;
+	line-height: 2;
+	margin: auto!important;
+}
+
+
 /* ====================== footer ====================== 2019.04.12 */
 .declare a {
 	color:#000;
@@ -538,4 +757,30 @@ h3{ margin-bottom: 20px; }
 .declare a:hover {
 	/* color:#fb3c3b; */
 	box-shadow: #fb3c3b 0 -1px 0 inset;
+}
+
+/* ====================== error page ====================== 2019.05.10 */
+.error-wrap {
+    margin: 0 auto;
+    padding: 80px 30px;
+    max-width: 760px;
+}
+.error-wrap .error-code {
+	font-size: 5rem;
+	line-height: 1.2;
+	font-weight: 700;
+	background-color: #222831;
+	color: #fff;
+	padding: 0 24px;
+	border-radius: 8px;
+	margin-bottom: 32px;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+.error-wrap .error-message {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.error-wrap .message-manual {
+    margin-bottom: 32px;
 }

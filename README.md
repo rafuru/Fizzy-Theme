@@ -25,10 +25,16 @@ The [fizzy.cc](https://fizzy.cc) is currently using this theme.
 - **No Index**: Use internal tag `#noindex`(slug:`hash-noindex`) to exclude posts from listing in home page. 
   - limitation: hiding posts with `#noindex` tag, but the number of posts each page will change accordingly.
 - **Templates**:
-  - **tag-archive**: You can use the tag archive template if you need one page to display all tags.
+  - **tag-archive**: You can use the tag archive template if you need one page to list all tags.([demo](https://fizzy.cc/tag/))
   - **featured-post**: unique layout for featured posts (todo)
   - **report**: special layout for academic report (todo)
 - **DISQUS**: change `https://fizzycc.disqus.com/embed.js` with your own link in `post.hbs`.
+- **Badge**: inclue `class="badge <color>"` to use badge (HTML only).([demo](https://fizzy.cc/fizzy-theme/#badge))
+- **code highlight**: powered by Prism.js.
+  - **Languages**: Markup (e.g. HTML), CSS, C-like, JavasSript, Bash, Ruby, Git, JSON, Markdown, SQL, Python, R
+  - **Plugins**: line-numbers, toolbar, show-language.
+  - For other languages, uncomment the sample code in `/partials/footer.hbs` and change it accordingly.
+  - Alternatively, you can download your own Prism js and css and overwrite the `prism.js` and `prism.css` files in `assets` folder.
 
 ## Changelog
 
