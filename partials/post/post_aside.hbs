@@ -3,21 +3,11 @@
         <div class="column is-2-widescreen is-1-desktop is-hidden-touch"></div>
         <div class="column is-8-widescreen is-10-desktop is-12-tablet">
             <div class="columns is-multiline">
-
-                {{!-- next post: start --}}
-                {{#next_post}}
-                    {{!-- {{#unless tag="#noindex"}} --}} {{!-- exclude #noindex--}}
-                        <div class="column is-6-tablet is-4-desktop">
-                            {{> "post_card"}}
-                        </div>
-                    {{!-- {{/unless}} --}}
-                {{/next_post}}
-                {{!-- next post: end --}}
-
                 {{!-- previous post: start --}}
                 {{#prev_post}}
-                <div class="column is-6-tablet is-4-desktop">
-                    {{> "post_card"}}
+                <div class="column card-frame is-6-tablet is-4-desktop">
+                    <span class="nav-label left is-montserrat has-shadow-lift">{{t "Previous Post"}}</span>
+                    {{> "post/post_card"}}
                 </div>
                 {{/prev_post}}
                 {{!-- previous post: end --}}
@@ -29,7 +19,7 @@
                 <div class="column is-full-tablet is-4-desktop">
                     <article class="box tag-list is-vpadding-2 has-text-centered has-text-light" style="background-image: url({{asset 'images/dark-cover.jpg'}})">
                         <header class="tag-list-header">
-                            <small class="tag-list-header-topic">&mdash; TOPIC &mdash;</small>
+                            <small class="tag-list-header-topic">&mdash; {{t "TOPIC"}} &mdash;</small>
                             {{#../primary_tag}}
                                 <a href="{{url}}" title="See all posts from {{name}}"><h3 class="title is-4 has-text-light">{{name}}</h3></a>
                             {{/../primary_tag}}
@@ -44,7 +34,7 @@
                         </div>
                         <footer class="tag-list-footer">
                             <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">
-                            <span>{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</span>
+                            <span>{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}} →</span>
                             </a>
                         </footer>
                     </article>
@@ -54,6 +44,19 @@
                 {{/get}}
                 {{/if}}
                 {{!-- related posts: end --}}
+
+                {{!-- next post: start --}}
+                {{#next_post}}
+                    {{!-- {{#unless tag="#noindex"}} --}} {{!-- exclude #noindex--}}
+                        <div class="column card-frame is-6-tablet is-4-desktop">
+                            <span class="nav-label right is-montserrat has-shadow-lift">{{t "Next Post"}}</span>
+                            {{> "post/post_card"}}
+                        </div>
+                    {{!-- {{/unless}} --}}
+                {{/next_post}}
+                {{!-- next post: end --}}
+
+
 
             </div>
         </div>

@@ -4,8 +4,8 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- carousel --}}
-{{> carousel}}
+{{!-- showcase --}}
+{{> showcase}}
 
 {{!-- main --}}
 <main class="section">
@@ -18,16 +18,16 @@ into the {body} of the default.hbs template --}}
                 {{#has tag="#noindex"}}
                     {{!-- nothing --}}
                 {{else}}
-                    {{> post_item}}
+                    {{> list_card}}
                 {{/has}}
 
-                {{!-- inject ads for every 3 items --}}
+                {{!-- inject something for every 3 items --}}
                 {{#has number="nth:3"}} 
                     {{!-- {{> "ads"}} --}}
                 {{/has}}
 
             {{else}}
-                There is no post yet.
+                {{t "There is no post yet."}}
             {{/foreach}}
         </div>
         <div class="column is-hidden-touch"></div>
@@ -40,4 +40,3 @@ into the {body} of the default.hbs template --}}
         {{pagination}}
     </div>
 </section>
-

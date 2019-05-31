@@ -18,11 +18,11 @@
                         </div>
                     </section>
                 {{else}}
-                <div class="box is-paddingless is-shadowless is-full-mobile is-centered">
-                <div class="spacing-25 is-hidden-mobile"></div>
+                <div class="box is-shadowless is-full-mobile is-centered">
                 {{/if}}
 
                     <section class="post-wrap is-vpadding-15">
+                        <div class="spacing-15 is-hidden-mobile"></div>
                         {{!-- meta --}}
                         <div class="has-2-ends is-montserrat is-uppercase is-size-7">
                             <div class="end date">{{date format=(t "DD MMMM YYYY")}}</div>
@@ -60,6 +60,10 @@
         </div>
     </div>
 </section>
+
+<script>
+    var show_toc = true;
+</script>
 
 {{!-- toc --}}
 {{> "post/post_toc"}}
