@@ -1,5 +1,76 @@
 # CHANGELOG
 
+## v1.3.2
+- 🌐 Tamil translated ([#43](https://github.com/huangyuzhang/Fizzy-Theme/pull/43))
+
+## v1.3.1
+- 🌐 French translated ([#39](https://github.com/huangyuzhang/Fizzy-Theme/pull/39))
+- 🐛 fixed search button display logic when set `show_search = false`. ([#37](https://github.com/huangyuzhang/Fizzy-Theme/issues/37))
+
+## [v1.3.0](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v1.3.0) (2019.10.23)
+- ⬆️ Support Ghost V3
+- 📝 `footer_text` includes html instruction
+- 🐛 fixed wrong icon for tag pages
+- 💄 improved overall layout for post content
+- ⚡️ added default image background as placeholder
+- 🌐 Turkish translated ([#35](https://github.com/huangyuzhang/Fizzy-Theme/pull/35))
+- 🐛 fixed image size configuration
+- ⚡️ crop images to improve page loading performance (feature image, author avatar)
+- 🐛 in post aside section, fixed post card width if no other posts exist in its primary_tag
+- ✨ added a new branch for Chinese optimization
+- 💄 improved bookmark card style
+- 📱 improved responsiveness of layout in all pages
+- 🐛 fixed bug in post archive page caused earlier this version
+
+## v1.2.6
+- 🐛 fixed when clicking inside of the search form will cause the form to disappear, and improved vertical padding of the button.
+- 🌐 added "No results" translation in `./locales`, `zh_CN` provided.
+
+## v1.2.5
+- 💄 improved post archive template: post title font, add author(s) to the right side of title (multiple authors enabled).
+
+## v1.2.4
+- ⚡️ improved post archive template page (featured icon position, better date display, flex layout)
+
+## v1.2.3
+- ⚡️ replaced FontAwesome by iconfont
+- 💄 improved featured post icon style
+
+## v1.2.2
+- 📝 add instruction for creating a link page with bookmark cards.
+
+## v1.2.1
+- ✨ add version number at footer
+
+## [v1.2.0](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v1.2.0) (2019.09.09)
+- 💄 improved bookmark card style
+- ✨ add roadmap link to "Get Fizzy Theme" button
+- 🐛 fixed "Get Fizzy Theme" button flash when `fizzy_credit` set to `false`.
+- ✨ add yellow badge (now supported colors: red, yellow, green, blue, purple)
+- 🐛 improved float TOC's background and spacing
+- ⚡️ make it easier to click the post title in `list_card`
+- ⚡️ improved `hr` divider's color
+- 📝 updated: badge color, roadmap link, contribute instruction, icons
+
+## v1.1.3
+- 📱 bookmark card responsive support
+- ✨ open external links in post content with new tabs.
+
+## v1.1.2
+- ✨ added CSS style support for ghost bookmark cards ([#32](https://github.com/huangyuzhang/Fizzy-Theme/pull/32))
+- 🐛 fixed Katex font size inconsistent in display and inline
+- 🐛 removed post float toc first item's first sub-item has 10px padding-top
+
+## [v1.1.1](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v1.1.1) (2019.09.02)
+- ⬆️ localize assets and CDN: Google Font (Montserrat), bulma css.
+- ✏️ fix some typos and bug caused by them.
+- 📝 Updated README: localization instructions.
+- and everything since v1.0.0.
+
+## v1.0.17
+- 🐛 Fixed rounded card background in topic archive page
+- 💄 Add mask for tag card in topic archive page, mask removed when hovering.
+
 ## v1.0.16
 - 🐛 Fixed the scale effect of post card in post aside section.
 
@@ -19,7 +90,7 @@
 - 🐛 fixed table font size.
 - 💄 Improved table style.
 - 💄 Improved Katex block style.
-- 💩 the table wider than the screen will make the page srollable in mobile devices.
+- 💩 the table wider than the screen will make the page scrollable in mobile devices.
 
 ## v1.0.11
 - 🐛 fixed table in mobile.
@@ -125,7 +196,7 @@ This release fixed some minor bugs caused from v0.2.0
 - **tag list**: smaller featured image size (close: [#11](../../issues/11))
 - **post typography**: inline code style, code block font-size
 - **code highlight**: changed to Prism.js highlighter.
-- **responsive**: fix wide table responsvie display in mobile devices (temorary fix: [#16](../../issues/16))
+- **responsive**: fix wide table responsive display in mobile devices (temporary fix: [#16](../../issues/16))
 - **default**: default.hbs simplified, loading speed increased.
 
 ## [v0.1.2](https://github.com/huangyuzhang/Fizzy-Theme/releases/tag/v0.1.2) (2019.05.05)

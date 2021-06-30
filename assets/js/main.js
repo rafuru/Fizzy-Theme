@@ -1,3 +1,11 @@
+/*
+Theme Name: Fizzy
+GitHub Repo: https://github.com/huangyuzhang/Fizzy-Theme
+Description: A tasty blogging theme for Ghost 
+Author: Yuzhang Huang
+Author URI: https://yuzhang.me
+*/
+
 // header: navbar Burgers 2019.04.08
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -63,30 +71,43 @@ if (typeof show_search == 'undefined') {
 if (!show_search) {
   $("#search-btn").hide();
 }
+// click search button event
 $("#search-btn").click(function(event) {
     // $("#search-input").val("");
-    $("#seach-form").fadeIn();
-    $("#search-btn").hide()
+    $("#search-form").fadeIn();
+    $("#search-btn").hide();
     $('#search-input').focus();
     $("#search-results").show();
     event.stopPropagation();
 });
+// click close button event
 $("#close-btn").click(function(event) {
-  $("#seach-form").hide();
+  $("#search-form").hide();
   $("#search-results").hide(); 
   $("#search-btn").fadeIn(); 
   // $("#search-input").val(""); //clear search field text  
   event.stopPropagation();
 });
-$(document).click(function(){
-  $("#seach-form").hide(); 
-  $("#search-results").hide(); 
-  $("#search-btn").fadeIn();
+// click outside of search form event
+$(document).mouseup(function(e) 
+{
+    var container = $("#search-form");
+    
+    // if the target of the click isn't the container nor a descendant of the container
+    if (show_search && !container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.hide();
+        $("#search-results").hide(); 
+        $("#search-btn").fadeIn();
+    }
 });
+// scroll event
 $(window).scroll(function(){
-  $("#seach-form").hide(); 
+  $("#search-form").hide(); 
   $("#search-results").hide(); 
-  $("#search-btn").show();
+  if (show_search) {
+    $("#search-btn").show();
+  }
 });
 
 /*----------------------------------------------------*/
@@ -95,10 +116,10 @@ $(window).scroll(function(){
 $(window).scroll(function(){
   var pxCreditBtn = 400;
   if($(window).scrollTop() < pxCreditBtn){
-    $("#fizzy-credit").show();
+    $("#fizzy-credit").fadeIn();
   }
   if($(window).scrollTop() >= pxCreditBtn){
-    $("#fizzy-credit").hide();
+    $("#fizzy-credit").fadeOut();
   }
 });
 /*----------------------------------------------------*/
@@ -106,7 +127,7 @@ $(window).scroll(function(){
 /*----------------------------------------------------*/
 if (typeof line_numbers == 'undefined') {
   var line_numbers = false;
-}
+};
 if (line_numbers) {
   $("pre").addClass("line-numbers");
-}
+};

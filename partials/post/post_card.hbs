@@ -4,7 +4,7 @@
         {{!-- featured_image --}}
         <a class="is-paddingless-top" href="{{url}}" alt="{{title}}" title="{{title}}">
             {{#if feature_image}}
-                <div class="featured-image" style="background-image:url({{img_url feature_image size="s"}});"></div>    
+                <div class="featured-image" style="background-image:url({{img_url feature_image size="medium"}});"></div>    
             {{else}}
                 <div class="featured-image" style="text-align: center;line-height:190px;background-image: linear-gradient(to bottom right, #6c1f9c, #0e5680);"> <span class="is-montserrat is-size-3 has-text-white">NO IMAGE</span></div>    
             {{/if}}
@@ -15,9 +15,9 @@
             <div class="post-info">
                 {{#if featured}}
                     {{#if feature_image}}
-                    <span class="featured-label has-img is-montserrat" title="{{t "Featured"}}"><i class="fas fa-fire-alt"></i> <span>{{t "Featured"}}</span></span>
+                    <span class="featured-label has-img is-montserrat" title="{{t "Featured"}}"><i class="iconfont icon-star"></i> <span>{{t "Featured"}}</span></span>
                     {{else}}
-                    <span class="featured-label no-img is-montserrat" title="{{t "Featured"}}"><i class="fas fa-fire-alt"></i> <span>{{t "Featured"}}</span></span>
+                    <span class="featured-label no-img is-montserrat" title="{{t "Featured"}}"><i class="iconfont icon-star"></i> <span>{{t "Featured"}}</span></span>
                     {{/if}}
                 {{/if}}
                 <div class="level is-mobile is-montserrat is-uppercase is-margin-bottom-1">
@@ -59,7 +59,7 @@
                                     {{#if profile_image}} 
                                     <a href="{{url}}">
                                         <figure class="image is-32x32 is-marginless">
-                                        <img class="image-squared is-rounded" src="{{profile_image}}" alt="{{name}}" title="{{name}}">
+                                        <img class="image-squared is-rounded" src="{{img_url profile_image size="icon"}}" alt="{{name}}" title="{{name}}">
                                         </figure>
                                     </a>
                                     {{/if}}

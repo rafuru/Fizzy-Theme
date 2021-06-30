@@ -1,46 +1,39 @@
 {
     "name": "fizzy",
     "description": "A tasty blogging theme for Ghost.",
-    "version": "1.0.16",
+    "version": "1.3.2",
     "author": {
         "name": "Yuzhang Huang",
         "email": "huangyuzhang@live.cn"
     },
     "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
-    },
-    "config": {
-        "posts_per_page": 8
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
     },
     "keywords": [
         "ghost",
         "theme",
         "ghost-theme"
     ],
-    "image_sizes": {
-        "xxs": {
-            "width": 60
-        },
-        "xs": {
-            "width": 150
-        },
-        "s": {
-            "width": 400
-        },
-        "m": {
-            "width": 800
-        },
-        "l": {
-            "width": 1200
-        },
-        "xl": {
-            "width": 2000
-        },
-        "carousel": {
-            "width": 470,
-            "height": 600
+    "dependencies": {},
+    "config": {
+        "posts_per_page": 8,
+        "image_sizes": {
+            "icon": {
+                "width": 64
+            },
+            "small": {
+                "width": 300
+            },
+            "medium": {
+                "width": 600
+            },
+            "large": {
+                "width": 900
+            },
+            "wide": {
+                "width": 1200
+            }
         }
-    },
-    "dependencies": {}
+    }
 }

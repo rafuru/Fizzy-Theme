@@ -1,30 +1,32 @@
 # The Fizzy Theme
 
 [![demo](https://img.shields.io/badge/Demo-online-yellow.svg)](https://fizzy.cc/)
-[![Ghost version](https://img.shields.io/badge/Ghost->=2.x-brightgreen.svg)](https://github.com/TryGhost/Ghost)
+[![Ghost version](https://img.shields.io/badge/Ghost->=3.x-brightgreen.svg)](https://github.com/TryGhost/Ghost)
 [![Release](https://img.shields.io/github/release/huangyuzhang/Fizzy-Theme.svg)](https://github.com/huangyuzhang/Fizzy-Theme/)
 [![GitHub forks](https://img.shields.io/github/forks/huangyuzhang/Fizzy-Theme.svg)](https://github.com/huangyuzhang/Fizzy-Theme/network)
 [![GitHub stars](https://img.shields.io/github/stars/huangyuzhang/Fizzy-Theme.svg?style=social&label=Star)](https://github.com/huangyuzhang/Fizzy-Theme/stargazers)
 
 A tasty blogging theme for Ghost :ghost:
 
-Thanks to everyone who starred and uses this theme. If you want to take advantage of all the features of this theme, please read this page.
+Thanks to everyone who starred this project. Please read the documentation to exploit all the features of this theme.
 
 [中文文档](./README-zh.md)
 
 ![](https://user-images.githubusercontent.com/40261916/60045241-3e045480-96bc-11e9-9382-03789cd8a637.jpg)
 
-## :wrench: Installation
+## 🔧 Installation
+- [Stable Version](https://github.com/huangyuzhang/Fizzy-Theme/releases/latest/)
+- [Development Version](https://github.com/huangyuzhang/Fizzy-Theme/tags/)
 
-Download the latest [release](https://github.com/huangyuzhang/fizzy-theme/releases/) and upload the zip file at your Ghost admin > Setting > Design.
+Download the `.zip` file and upload it at your Ghost Admin > Setting > Design.
 
-## :movie_camera: Demo
+## 🎥 Demo
 
 My blog [Fizzy.cc](https://fizzy.cc) is currently using this theme.
 
 Use this [issue](https://github.com/huangyuzhang/Fizzy-Theme/issues/20) to add your site with Fizzy Theme.
 
-## :tropical_drink: Features and Usage
+## 🍹 Features and Usage
 
 ### Logo
 If only **site icon** is uploaded, the Logo area will display the **icon** and followed by the **Site name** then a dot colored as the **main color**, e.g.:
@@ -38,12 +40,26 @@ If **site logo** is uploaded, then the Logo area will only display the **site lo
 ### :earth_africa: i18n
 You can change the theme's language in Ghost Admin -> General -> "Publication Language".
 
-|  Code   | Language | Status |
-| :-----: | :------: | :----: |
-|  `en`   | English  |   ✔️   |
-| `zh_CN` | 简体中文 |   ✔️   |
+|  Code   | Language | Status | Translator |
+| :-----: | :------: | :----: | :--: |
+|  `de`   | German  |   ✔️   |[Marek Schmidt](https://github.com/MSDev201)|
+|  `en`   | English  |   ✔️   ||
+| `fr` | French |   ✔️   |[Lourys](https://github.com/Lourys)|
+| `it` | Italian|   ✔️   |[Pyrox](https://github.com/Pyr0x1)|
+| `pt_BR` | Brazilian Portuguese |   ✔️   |[matheusvanzan](https://github.com/matheusvanzan)|
+| `ta` | Tamil |   ✔️   | [MC Naveen](https://github.com/the-mcnaveen) |
+| `th` | Thai |   ✔️   | [atbee](https://github.com/atbee) |
+| `tr` | Turkish |   ✔️   |[talut](https://github.com/talut)|
+| `zh_CN` | Chinese (Simplified) |   ✔️   ||
 
-Please help to translate Fizzy into the languages you know. To do so, first fork this repo. Then you need to copy the `en.json` file under `locales` folder and rename it to your language code, e.g. `es.json`, `zh_TW.json`. Then modify the translations within it. After testing, please create a Pull Request.
+
+Please help to translate Fizzy into the languages you know. To do so, first fork this repo. Then you need to copy the `en.json` file under `locales` folder and rename it to your language code, e.g. `es.json`, `zh_TW.json`. Then modify the translations within it. After testing, please create a "Pull Request" to `dev` branch of this repo (not `master`).
+
+### Assets Localization
+You could customize the following files to define the CDN of assets to speed up access in specific regions: 
+- `./default.hbs`
+- `./partials/post/post_footer.hbs`
+- `./partials/post/post_toc.hbs`
 
 ### Internal tags
 Internal tags start with `#`, after creating it will displayed as internal tag automatically. Internal tags will not be displayed in front-end. So far the Fizzy Theme support the following internal tags:
@@ -111,6 +127,8 @@ By default, your **site description** (Ghost Admin -> General) will be displayed
   var footer_text = "REPLACE WITH YOUR FOOTER TEXT HERE";
 </script>
 ```
+> You can include HTML in the `footer_text`, but be careful to use single quotation marks inside it. For example:
+> `var footer_text = "REPLACE <span style='color:red;font-weigh'>WITH</span> YOUR FOOTER TEXT HERE <i class='iconfont icon-heart'></i>";`
 
 ### :speech_balloon: Comment System
 Due to Ghost itself doesn't have a comment system, we need to use third party solutions for this. Some options are: [DISQUS][disqus], [Gitalk][gitalk], [Valine][valine] and [Vssue][vssue]. By default, Fizzy has Gitalk and DISQUS integrated. Skip the following if you do not need the comment system.
@@ -180,7 +198,7 @@ There are two ways to control the TOC of a post:
     </script>
     ```
 2. Use custom post template `Post With Toc` to enable TOC. 
-> **Prioty**: `template` > `Post Header` > `Site Header`
+> **Priority**: `template` > `Post Header` > `Site Header`
 
 > **Notice**: h2 and h3 headings on the page will be displayed by default. If you want to add other headings (e.g. h1 or h4), please edit `selectors` of the file `partials/post/post_toc.hbs`. However, you should not use h1 except for the post title.
 
@@ -198,9 +216,15 @@ Go to the Code injection, add the following code to the `Site Header`:
 ### LaTeX support
 Use `$`(inline) or `$$` to cover commands to render for LaTeX commands. ([examples](https://fizzy.cc/latex/))
 
+### Link Page
+Create a link page is nothing different than create a normal page. With the **Bookmark Card** feature since Ghost v2.30, you can easily add links to any page by type `/bookmark` in Ghost editor. ([demo](https://fizzy.cc/links/))
+
 ### Components
 - **Navigation**: You can modify `partials/navigation.hbs` to customize your dropdown menu, or delete the section if not needed.
-- **Badge**: inclue `class="badge <color>"` to use badge (HTML only).([demo](https://fizzy.cc/fizzy-theme/#badge))
+- **Badge**: include `class="badge <color>"` to use badge (HTML only).([demo](https://fizzy.cc/fizzy-theme/#badge))
+  - Supported colors: uncolored, red, yellow, green, blue, purple
+![image](https://user-images.githubusercontent.com/40261916/64512333-bcb27a80-d318-11e9-8b60-1f18468e3a30.png)
+    > Note: to use uncolored badge, set as `class="badge"`.
 - **Posts per page**: change the number of `"posts_per_page": 8` in `package.json`
 - **table**: to unwrap cells, uncomment the `/* white-space: nowrap; */` in `assets/css/main.css` around **line 703**.
 
@@ -214,7 +238,7 @@ If you want to disable the top right "Get Fizzy Theme" button, insert the follow
 ```
 > Please do not remove the footer text "Using The Fizzy Theme" and the link. Thank you for your support!
 
-## :memo: Changelog
+## 📝 Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md)
 
@@ -222,30 +246,35 @@ See [CHANGELOG.md](./CHANGELOG.md)
 
 See [Contributors][contributors]
 
-## :battery: Dependencies
+## 🔋 Dependencies
 
 - [Bulma][bulma] - CSS Framework
 - [Prismjs][prismjs] - A lightweight syntax highlighter
-- [JQuery][jquery] - A well-known JavaSript library (for tocify only now)
+- [JQuery][jquery] - A well-known JavaScript library (for tocify only now)
 - [jQuery.tocify.js][tocify] - Table of Content generator (also JQuery-UI)
 - [KaTeX][katex] - A faster LaTeX equation rendering library (since v0.3.0)
 - [Gitalk][gitalk] - A Github issued based comment system (since v0.3.0)
 - [ghost-search][ghost-search] - An instant search library using Ghost Content API (since v1.0.0)
+- [iconfont][iconfont] - A free icon solution (since v1.2.3)
 
-## :bug: Bug Report & :dart: Features Request
+## 📍 Roadmap
+To know the future planning of this project, please visit our [Roadmap][roadmap].
+
+## 🐛 Bug Report & :dart: Features Request
 If you find a bug, thinking about something to be improved or even want new features, please feel free to post an issue. 
 
 Alternatively you could contribute to this project.
 
-## :bulb: Contributing
+## 💡 Contributing
 
 1. Fork it (maybe star this too?)
 2. Create your feature branch (`git checkout -b feature-fooBar`)
-3. Commit your changes (`git commit -am 'Add something'`)
-4. Push to the branch (`git push origin feature-fooBar`)
-5. Create a new Pull Request
+3. Commit your changes (`git commit -m 'Add something'`)
+4. Push to the branch to origin (`git push origin feature-fooBar`)
+5. Create a new Pull Request to `dev` branch here
+6. Wait for code review and modify if necessary
 
-## :lock_with_ink_pen: License 
+## 🔏 License 
 
 This project is licensed under the MIT License.
 
@@ -261,4 +290,6 @@ This project is licensed under the MIT License.
 [vssue]: https://github.com/meteorlxy/vssue
 [custom-prism]: https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+ruby+git+json+markdown+nginx+sql+python+r&plugins=line-numbers+toolbar+show-language
 [ghost-search]: https://github.com/HauntedThemes/ghost-search
+[iconfont]:https://www.iconfont.cn
 [contributors]: https://github.com/huangyuzhang/Fizzy-Theme/graphs/contributors
+[roadmap]: https://github.com/huangyuzhang/Fizzy-Theme/projects/3
